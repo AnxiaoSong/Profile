@@ -9,15 +9,16 @@
   </div>
 
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    <h3 class="author__name">{{ page.author_name | default: author.name }}</h3>
+    {% if page.author_bio or author.bio %}<p class="author__bio">{{ page.author_bio | default: author.bio }}</p>{% endif %}
   </div>
 
   <div class="author__urls-wrapper">
     <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
     <ul class="author__urls social-icons">
-      {% if site.description %}
-        <li><div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div></li>
+      {% assign sidebar_description = page.sidebar_description | default: site.description %}
+      {% if sidebar_description %}
+        <li><div style="white-space: normal; margin-bottom: 1em;">{{ sidebar_description }}</div></li>
       {% endif %}
       {% if author.location %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
