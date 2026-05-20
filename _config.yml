@@ -8,6 +8,8 @@
 # Site Settings
 title                    : "宋安霄 (Anxiao Song)"
 description              : "安全多方计算、联邦学习、隐私保护机器学习、大小模型协同安全"
+url                      : "https://anxiaosong.github.io"
+baseurl                  : "/Profile"
 repository               : "tangjyan/tangjyan.github.io"
 google_scholar_stats_use_cdn : false
 
@@ -90,7 +92,11 @@ exclude:
   - node_modules
   - package.json
   - tmp
+  - docker-compose.yml
+  - Dockerfile
+  - entrypoint.sh
   - vendor
+  - .opencode
 keep_files:
   - .git
   - .svn
